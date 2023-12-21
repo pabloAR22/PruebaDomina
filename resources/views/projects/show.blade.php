@@ -16,10 +16,10 @@
                             <p class="text-sm ml-3">Fecha de inicio: {{ $project->startDate}}</p>
                         </div> 
                     </div>
-                       
-                    <p class="text-lg font-semibold text-gray-100 my-3">Description</p>
                     <hr>
-                    <p class="text-sm mt-3">{{ $project->description}}</p>
+                    <p class="text-lg font-semibold text-gray-100 my-3">Description</p>
+                    <p class="text-sm my-3">{{ $project->description}}</p>
+                    <hr>
                     <div class="mt-4">
                         <a href="{{ route('tasks.create') }}" class="bg-blue-400 text-black rounded px-4 py-2">Add Tasks</a>
                     </div>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Task;
 use App\Models\Project;
 use App\Models\User;
+use App\Models\Comment;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -74,7 +76,15 @@ class TaskController extends Controller
      */
     public function show(Task $task)
     {
-        //
+        // $comments = Comment::where('task_id', $task->id)->get();
+        $comments = DB::table('comments')
+                        ->select('comments.comment', 'comments.created_at', 'users.name')
+                        ->join('users', 'users.id', '=', 'comments.user_id')
+                        ->get();
+         return view('tasks.show', [
+            'task' => $task,
+            'comments' => $comments
+        ]);
     }
 
     /**

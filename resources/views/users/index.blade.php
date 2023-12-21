@@ -12,6 +12,10 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <table class="mb-4">
                         @foreach ($users as $user)
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                            </tr>
                             <tr class="border-b border-gray-200 text-sm">
                                 <td class="px-6 py-4">{{ $user->name}}</td>
                                 <td class="px-6 py-4">{{ $user->email }}</td>
