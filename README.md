@@ -6,11 +6,17 @@ La aplicación fue desarrollada en laravel, el db manager utilizado durante el d
 
 ### Instalación
 1. Se deben bajar los cambios desde git.
-2. Correr las migraciones y sembrar la base de datos con el comando *php artisan migrate:refresh --seed*
+2. Correr las migraciones y sembrar la base de datos con el comando *php artisan migrate --seed*
 3. En caso de que algunos estilos no se esten aplicando correctamente, recomiendo dejar corriendo en una consola el comando npm run dev o npm run watch.
 
 ### Primeros pasos
 Una vez hechos los pasos anteriores, en base de datos deberás tener en la tabla users un usuario creado automaticamente por el seed, la contraseña por defecto es "password" el email o usuario se saca del campo email.
+
+### Decisiones de desarrollo
+El sistema de autentificación y login se realiza por medio de la librería laravel/breeze, de esta manera se puede realizar un proyecto mucho mas seguro que implementando la seguridad desde 0.
+Se implemento el framework tailwindCSS con el fin de simplificar los estilos CSS.
+El desarrollo utiliza el modelo MVC para la estructura del codigo. de esta manera se consigue seguir los lineamientos propios del framework laravel.
+
 
 ### Vista inicial.
 ![Vista_inicial](image.png)
